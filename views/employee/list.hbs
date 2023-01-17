@@ -1,0 +1,25 @@
+<h3>Employee List</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Email</th>
+            <th>Option</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.fullname}}</td>
+            <td>{{this.age}}</td>
+            <td>{{this.email}}</td>
+            <td>
+                <a href="/employee/{{this._id}}">Up</a>
+                <a href="/employee/delete/{{this._id}}" onclick="return confirm('Are you sure?');">Del</a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+<a class=btn btn-secondary href="/employee/">Create User</a>
